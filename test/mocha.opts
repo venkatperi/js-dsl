@@ -1,0 +1,4 @@
+--timeout 25000
+-R spec
+test/*.{js,coffee}
+
