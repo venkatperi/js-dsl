@@ -1,7 +1,7 @@
-= node-factory-builder
+# node-factory-builder
 A 'groovy-esq' DSL builder for JavaScript/nodejs.
 
-== Example
+## Example
 
 ```javascript
 const forest = () =>
