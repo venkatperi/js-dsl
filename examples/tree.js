@@ -1,8 +1,6 @@
 'use "strict'
-const assert = require( 'assert' );
 
 const { FactoryBuilderSupport, AbstractFactory } = require( '../index' );
-const { toAsciiTree, toStringTree } = require( './fixtures/formatter' );
 
 class Tree {
   constructor( name ) {
@@ -50,7 +48,36 @@ class TreeBuilder extends FactoryBuilderSupport {
   }
 }
 
-const forest = () =>
+function walk( node, visitor ) {
+  visitor( node );
+  if ( node.children )
+    node.children.forEach( ( c ) => walk( c, visitor ) );
+}
+
+function toAsciiTree( tree, prefix = "", isTail = true ) {
+  if ( !tree ) return null;
+
+  let name = tree.name;
+  let res = [];
+  res.push( prefix );
+  res.push( isTail ? "└─" : "├─" );
+  res.push( name );
+  res.push( "\n" );
+
+  if ( tree.children ) {
+    let i = 0;
+    let childCount = tree.children.length;
+
+    tree.children.forEach( ( c ) => {
+      let p = prefix + ( isTail ? "  " : "│ " );
+      res.push( toAsciiTree( c, p,
+        i++ < childCount - 1 ? false : true ) );
+    } );
+  }
+  return res.join( '' );
+};
+
+let forest = new TreeBuilder().build( () =>
   tree( 'a', () => {
     tree( 'b', () => {
       tip( 'c' )
@@ -65,13 +92,6 @@ const forest = () =>
       } )
     } )
   } )
+)
 
-res = "(a (b (c ) ) (d ) (e (f (g (d ) ) (h ) ) ) )"
-
-describe( 'tree', () => {
-  it( 'has trees and tips', () =>
-    assert.equal( toStringTree( new TreeBuilder().build( forest ) ), res )
-  );
-} );
-
-
+console.log( toAsciiTree( forest ) );
