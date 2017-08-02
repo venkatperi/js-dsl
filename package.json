@@ -10,9 +10,13 @@
   "license": "MIT",
   "dependencies": {
     "debug": "^2.6.8",
+    "documentation": "^5.1.0",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-documentation": "^3.2.0",
+    "gulp-header": "^1.8.9",
     "mocha": "^3.4.2"
   }
 }
