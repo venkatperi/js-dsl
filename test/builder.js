@@ -70,8 +70,7 @@ res = "(a (b (c ) ) (d ) (e (f (g (d ) ) (h ) ) ) )"
 
 describe( 'tree', () => {
   it( 'has trees and tips', () =>
-    assert.equal( toStringTree( new TreeBuilder().build( forest ) ), res )
+    assert.equal( toStringTree( new TreeBuilder()
+      .build( forest ) ), res )
   );
 } );
-
-
