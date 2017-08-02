@@ -17,7 +17,12 @@
     "gulp": "^3.9.1",
     "gulp-documentation": "^3.2.0",
     "gulp-header": "^1.8.9",
+    "gulp-istanbul": "^1.1.2",
+    "gulp-jshint": "^2.0.4",
+    "gulp-mocha": "^3.0.1",
     "gulp-release-it": "^1.1.5",
+    "istanbul": "^0.4.5",
+    "jshint": "^2.9.5",
     "mocha": "^3.4.2"
   }
 }
