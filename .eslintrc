@@ -1,0 +1,20 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "webpackConfig": false,
+    "projectDir": true
+  },
+  "rules": {
+    "space-in-parens": "off",
+    "no-underscore-dangle": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "warn",
+      {
+        "aspects": [
+          "invalidHref"
+        ]
+      }
+    ]
+  }
+}

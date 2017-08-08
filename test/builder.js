@@ -1,17 +1,18 @@
-'use "strict'
+/* eslint-disable no-undef,class-methods-use-this */
 const assert = require( 'assert' );
 
 const { FactoryBuilderSupport, AbstractFactory } = require( '../index' );
-const { toAsciiTree, toStringTree } = require( './fixtures/formatter' );
+const { toStringTree } = require( './fixtures/formatter' );
 
 class Tree {
   constructor( name ) {
     this.name = name;
-    this.children = []
+    this.children = [];
   }
 
   addChild( child ) {
     this.children.push( child );
+    // eslint-disable-next-line no-param-reassign
     child.parent = this;
   }
 }
@@ -53,24 +54,24 @@ class TreeBuilder extends FactoryBuilderSupport {
 const forest = () =>
   tree( 'a', () => {
     tree( 'b', () => {
-      tip( 'c' )
-    } )
-    tip( 'd' )
+      tip( 'c' );
+    } );
+    tip( 'd' );
     tree( 'e', () => {
       tree( 'f', () => {
         tree( 'g', () => {
-          tip( 'd' )
-        } )
-        tip( 'h' )
-      } )
-    } )
-  } )
+          tip( 'd' );
+        } );
+        tip( 'h' );
+      } );
+    } );
+  } );
 
-res = "(a (b (c ) ) (d ) (e (f (g (d ) ) (h ) ) ) )"
+res = '(a (b (c ) ) (d ) (e (f (g (d ) ) (h ) ) ) )';
 
 describe( 'tree', () => {
   it( 'has trees and tips', () =>
     assert.equal( toStringTree( new TreeBuilder()
-      .build( forest ) ), res )
+      .build( forest ) ), res ),
   );
 } );
