@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Copyright 2017, Venkat Peri.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -20,6 +21,6 @@
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 module.exports = {
-  FactoryBuilderSupport: require( './lib/factory_builder_support' ),
+  JsDsl: require( './lib/factory_builder_support' ),
   AbstractFactory: require( './lib/abstract_factory' ),
 };

@@ -1,7 +1,7 @@
 /* eslint-disable no-undef,class-methods-use-this */
 const assert = require( 'assert' );
 
-const { FactoryBuilderSupport, AbstractFactory } = require( '../index' );
+const { JsDsl, AbstractFactory } = require( '../index' );
 const { toStringTree } = require( './fixtures/formatter' );
 
 class Tree {
@@ -43,7 +43,7 @@ class TipFactory extends AbstractFactory {
   }
 }
 
-class TreeBuilder extends FactoryBuilderSupport {
+class TreeBuilder extends JsDsl {
   constructor() {
     super();
     this.registerFactory( 'tree', new TreeFactory() );
