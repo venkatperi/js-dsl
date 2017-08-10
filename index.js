@@ -21,6 +21,6 @@
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 module.exports = {
-  JsDsl: require( './lib/factory_builder_support' ),
+  JsDsl: require( './lib/js_dsl' ),
   AbstractFactory: require( './lib/abstract_factory' ),
 };

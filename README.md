@@ -1,4 +1,4 @@
-# node-factory-builder
+# js-dsl
 A 'groovy-esq' DSL builder for JavaScript/nodejs.
 
 ## Example

@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "documentation": "^5.1.0",
-    "eslint": "^4.3.0",
+    "eslint": "^4.4.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
