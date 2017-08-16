@@ -1,4 +1,4 @@
-/* eslint-disable no-undef,class-methods-use-this */
+/* eslint-disable no-undef,class-methods-use-this,no-console */
 const assert = require( 'assert' );
 
 const { JsDsl, AbstractFactory } = require( '../index' );
@@ -48,16 +48,19 @@ class TreeBuilder extends JsDsl {
     super();
     this.registerFactory( 'tree', new TreeFactory() );
     this.registerFactory( 'tip', new TipFactory() );
+    this.registerPropertyNames( ['name', 'description'] );
   }
 }
 
 const forest = () =>
   tree( 'a', () => {
     tree( 'b', () => {
+      assert.equal(name, 'b');
       tip( 'c' );
     } );
     tip( 'd' );
     tree( 'e', () => {
+      assert.equal(name, 'e');
       tree( 'f', () => {
         tree( 'g', () => {
           tip( 'd' );

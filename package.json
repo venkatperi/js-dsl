@@ -1,10 +1,11 @@
 {
   "name": "js-dsl",
-  "version": "0.4.4",
+  "version": "0.0.0-development",
   "description": "A DSL builder for JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Venkat Peri <venkatperi@gmail.com>",
   "license": "MIT",
@@ -28,6 +29,11 @@
     "gulp-release-it": "^1.1.5",
     "istanbul": "^0.4.5",
     "jshint": "^2.9.5",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "semantic-release": "^7.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/venkatperi/js-dsl.git"
   }
 }
