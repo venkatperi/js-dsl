@@ -48,8 +48,7 @@ class TipFactory extends AbstractFactory {
 }
 
 class TreeBuilder extends JsDsl {
-  constructor() {
-    super();
+  register() {
     this.registerFactory( 'tree', new TreeFactory() );
     this.registerFactory( 'tip', new TipFactory() );
     this.registerPropertyNames( ['name', 'description'] );
