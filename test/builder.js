@@ -15,6 +15,10 @@ class Tree {
     // eslint-disable-next-line no-param-reassign
     child.parent = this;
   }
+
+  someMethod() {
+    console.log( 'some method' )
+  }
 }
 
 class Tip {
@@ -49,21 +53,26 @@ class TreeBuilder extends JsDsl {
     this.registerFactory( 'tree', new TreeFactory() );
     this.registerFactory( 'tip', new TipFactory() );
     this.registerPropertyNames( ['name', 'description'] );
+    this.registerMethodNames( ['someMethod'] );
   }
 }
 
 const forest = () =>
   tree( 'a', () => {
-    tree( 'b', () => {
-      assert.equal(name, 'b');
+    description = 'node a'
+    tree( 'bb', () => {
+      assert.equal( name, 'bb' );
+      description = 'node b'
+      name = 'b'
       tip( 'c' );
     } );
     tip( 'd' );
     tree( 'e', () => {
-      assert.equal(name, 'e');
+      assert.equal( name, 'e' );
       tree( 'f', () => {
         tree( 'g', () => {
           tip( 'd' );
+          someMethod();
         } );
         tip( 'h' );
       } );
