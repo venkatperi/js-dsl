@@ -11,6 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "debug": "^2.6.8",
+    "html-validator": "^3.0.1",
+    "libtidy": "^0.3.7",
     "lodash": "^4.17.4"
   },
   "devDependencies": {

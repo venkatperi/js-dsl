@@ -1,32 +1,32 @@
-'use "strict'
+'use "strict';
 
-function toAsciiTree( tree, prefix = "", isTail = true ) {
+function toAsciiTree( tree, prefix = '', isTail = true ) {
   if ( !tree ) return null;
 
-  let name = tree.name;
-  let res = [];
+  const name = tree.name;
+  const res = [];
   res.push( prefix );
-  res.push( isTail ? "└─" : "├─" );
+  res.push( isTail ? '└─' : '├─' );
   res.push( name );
-  res.push( "\n" );
+  res.push( '\n' );
 
   if ( tree.children ) {
     let i = 0;
-    let childCount = tree.children.length;
+    const childCount = tree.children.length;
 
     tree.children.forEach( ( c ) => {
-      let p = prefix + ( isTail ? "  " : "│ " );
+      const p = prefix + ( isTail ? '  ' : '│ ' );
       res.push( toAsciiTree( c, p,
-        i++ < childCount - 1 ? false : true ) );
+        !(i++ < childCount - 1) ) );
     } );
   }
   return res.join( '' );
-};
+}
 
 function toStringTree( tree ) {
   if ( !tree ) return null;
 
-  let res = [];
+  const res = [];
   res.push( `(${tree.name}` );
 
   if ( tree.children ) {
@@ -36,9 +36,9 @@ function toStringTree( tree ) {
   }
   res.push( ')' );
   return res.join( ' ' );
-};
+}
 
 module.exports = {
   toAsciiTree,
-	toStringTree
-}
+  toStringTree,
+};
