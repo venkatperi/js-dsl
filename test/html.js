@@ -1,9 +1,8 @@
 /* eslint-disable no-undef,class-methods-use-this,no-console,semi */
-const assert = require( 'assert' );
-
 const HtmlBuilder = require( './fixtures/HtmlBuilder' );
 const validator = require( 'html-validator' )
 
+// noinspection JSUnresolvedFunction
 const test = () =>
   html( { lang: 'en' }, () => {
     head( () => {

@@ -1,6 +1,6 @@
 'use "strict'
 
-const { FactoryBuilderSupport, AbstractFactory } = require( '../index' );
+const { JsDsl, AbstractFactory } = require( '../index' );
 
 class Tree {
   constructor( name ) {
@@ -40,7 +40,7 @@ class TipFactory extends AbstractFactory {
   }
 }
 
-class TreeBuilder extends FactoryBuilderSupport {
+class TreeBuilder extends JsDsl {
   constructor() {
     super();
     this.registerFactory( 'tree', new TreeFactory() );
@@ -75,7 +75,7 @@ function toAsciiTree( tree, prefix = "", isTail = true ) {
     } );
   }
   return res.join( '' );
-};
+}
 
 let forest = new TreeBuilder().build( () =>
   tree( 'a', () => {

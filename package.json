@@ -10,15 +10,16 @@
   "author": "Venkat Peri <venkatperi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.6.8",
+    "debug": "^2.6.9",
     "html-validator": "^3.0.1",
-    "libtidy": "^0.3.7",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "documentation": "^5.2.1",
     "eslint": "^4.4.1",
     "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-vaadin": "^0.2.7",
+    "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.2.1",
@@ -30,7 +31,7 @@
     "gulp-mocha": "^3.0.1",
     "gulp-release-it": "^1.1.6",
     "istanbul": "^0.4.5",
-    "jshint": "^2.9.5",
+    "jshint": "^2.10.2",
     "mocha": "^3.5.0",
     "semantic-release": "^7.0.1"
   },
