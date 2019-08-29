@@ -14,7 +14,7 @@ before_script:
   - npm prune
 
 after_success:
-  - npm run build && npm run semantic-release
+  - npm run build
 
 branches:
   except:
