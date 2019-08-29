@@ -21,7 +21,7 @@
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-const { JsDsl, AbstractFactory } = require( '../../index' );
+const { JsDsl, AbstractFactory } = require( '../../' );
 
 
 const _ = require( 'lodash' );

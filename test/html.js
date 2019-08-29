@@ -29,10 +29,10 @@ body {
 describe( 'html', () => {
   it( 'generates html', ( done ) => {
     const content = new HtmlBuilder().build( test ).toHtml();
-    console.log( content );
+    // console.log( content );
     validator( { data: content, format: 'text' } )
-      .then( ( data ) => {
-        console.log( data );
+      .then( () => {
+        // console.log( data );
         done();
       } )
       .catch( done );

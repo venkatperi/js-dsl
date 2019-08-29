@@ -2,9 +2,11 @@
   "name": "js-dsl",
   "version": "1.0.2",
   "description": "A DSL builder for JavaScript",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha",
+    "clean": "rm -rf dist",
+    "build": "babel lib -d dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Venkat Peri <venkatperi@gmail.com>",
@@ -15,6 +17,8 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "documentation": "^5.2.1",
     "eslint": "^4.4.1",
     "eslint-config-airbnb": "^15.1.0",

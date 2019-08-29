@@ -20,7 +20,7 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-const { JsDsl, AbstractFactory } = require( '../../index' );
+const { JsDsl, AbstractFactory } = require( '../..' );
 const _ = require( 'lodash' );
 
 class Element {

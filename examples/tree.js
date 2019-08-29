@@ -1,6 +1,6 @@
 'use "strict'
 
-const { JsDsl, AbstractFactory } = require( '../index' );
+const { JsDsl, AbstractFactory } = require( 'lib/index' );
 
 class Tree {
   constructor( name ) {
