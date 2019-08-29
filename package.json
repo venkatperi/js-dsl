@@ -10,7 +10,7 @@
     "build": "babel lib -d dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "author": "Venkat Peri <venkatperi@gmail.com>",
+  "author": "Venkat Peri <venkat@vperi.com>",
   "license": "MIT",
   "dependencies": {
     "debug": "^2.6.9",
