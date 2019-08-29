@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha",
     "clean": "rm -rf dist",
+    "pretest": "npm run build",
     "build": "babel lib -d dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
