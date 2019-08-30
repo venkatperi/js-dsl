@@ -19,7 +19,7 @@ export class AbstractFactory<P, T> {
 export class JsDsl {
     constructor(...args:any[]);
 
-    build(f: Config): object;
+    build<E>(f: Config): E;
 
     buildFile(fileName: String, ...args: any[]): void;
 
