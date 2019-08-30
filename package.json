@@ -1,6 +1,6 @@
 {
   "name": "js-dsl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A DSL builder for JavaScript",
   "main": "dist/index.js",
   "scripts": {
