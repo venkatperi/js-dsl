@@ -1,15 +1,17 @@
-'use "strict'
+'use "strict';
 
-const { JsDsl, AbstractFactory } = require( 'lib/index' );
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { JsDsl, AbstractFactory } = require( '..' );
 
 class Tree {
   constructor( name ) {
     this.name = name;
-    this.children = []
+    this.children = [];
   }
 
   addChild( child ) {
     this.children.push( child );
+    // eslint-disable-next-line no-param-reassign
     child.parent = this;
   }
 }
@@ -48,50 +50,45 @@ class TreeBuilder extends JsDsl {
   }
 }
 
-function walk( node, visitor ) {
-  visitor( node );
-  if ( node.children )
-    node.children.forEach( ( c ) => walk( c, visitor ) );
-}
-
-function toAsciiTree( tree, prefix = "", isTail = true ) {
+function toAsciiTree( tree, prefix = '', isTail = true ) {
   if ( !tree ) return null;
 
-  let name = tree.name;
-  let res = [];
+  const name = tree.name;
+  const res = [];
   res.push( prefix );
-  res.push( isTail ? "└─" : "├─" );
+  res.push( isTail ? '└─' : '├─' );
   res.push( name );
-  res.push( "\n" );
+  res.push( '\n' );
 
   if ( tree.children ) {
     let i = 0;
-    let childCount = tree.children.length;
+    const childCount = tree.children.length;
 
     tree.children.forEach( ( c ) => {
-      let p = prefix + ( isTail ? "  " : "│ " );
-      res.push( toAsciiTree( c, p,
-        i++ < childCount - 1 ? false : true ) );
+      const p = prefix + (isTail ? '  ' : '│ ');
+      // eslint-disable-next-line no-plusplus
+      res.push( toAsciiTree( c, p, !(i++ < childCount - 1) ) );
     } );
   }
   return res.join( '' );
 }
 
-let forest = new TreeBuilder().build( () =>
+const forest = new TreeBuilder().build( () =>
   tree( 'a', () => {
     tree( 'b', () => {
-      tip( 'c' )
-    } )
-    tip( 'd' )
+      tip( 'c' );
+    } );
+    tip( 'd' );
     tree( 'e', () => {
       tree( 'f', () => {
         tree( 'g', () => {
-          tip( 'd' )
-        } )
-        tip( 'h' )
-      } )
-    } )
-  } )
-)
+          tip( 'd' );
+        } );
+        tip( 'h' );
+      } );
+    } );
+  } ),
+);
 
+// eslint-disable-next-line no-console
 console.log( toAsciiTree( forest ) );

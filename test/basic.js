@@ -5,6 +5,7 @@ const TreeDsl = require( './fixtures/TreeDsl' );
 const { toStringTree } = require( './fixtures/formatter' );
 
 
+// noinspection DuplicatedCode
 const forest = () =>
   tree( 'a', () => {
     tree( 'b', () => {
