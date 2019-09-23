@@ -1,5 +1,23 @@
 # js-dsl
-`js-dsl` is a `nodejs` framework for developing internal, builder-style domain specific languages (DSLs).
+`js-dsl` is a `nodejs` lets you build Javascript domain specific languages (DSLs). Specifically, these DSLs let you build an (almost) arbitrary tree of nodes that parallels your abstract syntax tree (AST) or semantic model (SM). You need to register the names of the nodes with js-dsl and the context under which nodes may appear. In in DSL, you are provided global node-method calls that map to the node names that you registered. js-dsl will orchestrate the building of the node-tree and call a factory object that was registered with each node. The factory object is responsible for instantiating new nodes and inserting them appropriately in the AST hierarchy, among other things.
+
+Here's an example of a [DSL](https://github.com/venkatperi/js.html) that generates HTML:
+```Javascript
+div( { class: 'my-style' }, () => {
+  h2( 'Header 2' )
+  p( 'This is another paragraph' )
+} )
+```
+
+Under the hood, the DSL generates a tree of `element` nodes which can be rendered into this HTML snippet:
+```html
+<div class="my-style">
+  <h2>Header 2</h2>
+  <p>This is another paragraph</p>
+</div>
+```
+
+
 
 Examples of builder-style DSLs include `mocha`.
 
