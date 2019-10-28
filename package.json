@@ -7,7 +7,9 @@
     "test": "mocha",
     "clean": "rm -rf dist",
     "pretest": "npm run build",
-    "build": "babel lib -d dist && cp lib/index.d.ts dist"
+    "build": "babel lib -d dist && cp lib/index.d.ts dist",
+    "docs:dev": "vuepress dev doc",
+    "docs:build": "vuepress build doc"
   },
   "author": "Venkat Peri <venkat@vperi.com>",
   "license": "MIT",
@@ -28,7 +30,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.2.1",
     "jshint": "^2.10.2",
-    "mocha": "^3.5.0"
+    "mocha": "^3.5.0",
+    "vuepress": "^1.2.0"
   },
   "repository": {
     "type": "git",
