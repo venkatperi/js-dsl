@@ -1,5 +1,6 @@
 module.exports = {
   title: "js-dsl",
+  base: "/js-dsl",
   dest: "docs", 
   themeConfig: {
     nav: [
