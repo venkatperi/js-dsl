@@ -15,10 +15,10 @@
   "license": "MIT",
   "dependencies": {
     "debug": "^2.6.9",
-    "html-validator": "^3.0.1",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "html-validator": "^3.0.1",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "documentation": "^5.2.1",
@@ -29,7 +29,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.2.1",
-    "jshint": "^2.10.2",
+    "jshint": "^2.13.4",
     "mocha": "^3.5.0",
     "vuepress": "^1.2.0"
   },
