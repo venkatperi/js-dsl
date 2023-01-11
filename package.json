@@ -14,7 +14,7 @@
   "author": "Venkat Peri <venkat@vperi.com>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.6.9",
+    "debug": "^3.1.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
